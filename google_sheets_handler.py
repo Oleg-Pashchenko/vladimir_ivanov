@@ -32,7 +32,7 @@ def write_element(title, sum1):
             col_index = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[col_index]
             cell_address = f'{sheet_title}!{col_index}{row_index}'
             body = {
-                'values': [[str(sum1)]]
+                'values': [[int(sum1)]]
             }
             result = service.spreadsheets().values().update(spreadsheetId=spreadsheet_id, range=cell_address,
                                                             valueInputOption='RAW', body=body).execute()
